@@ -1,0 +1,49 @@
+.message-success {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 16px;
+    padding: 10px 14px;
+
+    width: fit-content;
+
+    border-radius: 4px;
+    background: #f1faed;
+
+    color: #45a524;
+    font-size: 15px;
+    font-weight: 500;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.message-success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+    background: #2e9d4d;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.message-success-text {
+    font-weight: 500;
+}
+
+/* Thông báo lỗi khi nhập form */
+.error {
+    display: block;
+    color: red;
+    font-size: 13px;
+    text-align: left;
+    margin-bottom: 8px;
+}
