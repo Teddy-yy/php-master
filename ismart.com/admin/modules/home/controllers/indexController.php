@@ -9,6 +9,6 @@
     }
 
     function addAction(){
-        echo "Thêm dữ liệu";
+       
     }
 ?>

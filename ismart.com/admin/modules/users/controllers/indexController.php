@@ -219,7 +219,7 @@ function updateAvatarAction(){
 
             // 4. Cập nhật file ảnh đã đổi tên vào DB 
             $data = array(
-                'avatar' => $upload_file
+                'avatar' => $new_name
             );
 
             update_user_login(user_login(), $data);
@@ -227,14 +227,15 @@ function updateAvatarAction(){
             // 5. Chuyển ảnh đã đổi tên vào upload/avatars
             if(move_uploaded_file($_FILES['avatar']['tmp_name'], $upload_file)){
                 // Sau khi thêm ảnh thành công thì xoá bỏ avatar cũ
-                if(file_exists($old_avatar)){
-                    unlink($old_avatar);
+                if(file_exists($upload_dir . $old_avatar)){
+                    unlink($upload_dir . $old_avatar);
                 }
 
                 echo json_encode([
                     'status' => 'success',
                     'upload_file' => $upload_file
                 ]);
+                exit();
             }   
             
         } else {

@@ -31,13 +31,7 @@ if (is_array($autoload)) {
 global $db;
 db_connect($db);
 
-// Include file layout/header
-// require LAYOUTPATH . DIRECTORY_SEPARATOR . 'header.php';
-
 // Include file core/router
 require COREPATH . DIRECTORY_SEPARATOR . 'router.php';
-
-// Include file layout/footer
-// require LAYOUTPATH . DIRECTORY_SEPARATOR . 'footer.php';
 
 

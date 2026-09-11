@@ -1,3 +1,14 @@
+<?php
+    $info_user = get_user_by_username($_SESSION['user_login']);
+
+    $upload_dir = "public/upload/avatars/";
+    if(empty($info_user['avatar'])){
+        $avatar = "default-avatar.jpg";
+    } else {
+        $avatar = $info_user['avatar'];
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -80,7 +91,7 @@
                         <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
                             <button class="dropdown-toggle clearfix header-info-user" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <div id="thumb-circle" class="fl-left avatar-wp">
-                                    <img src="public/images/avatar-default.svg" class="avatar">
+                                    <img src="<?php echo $upload_dir . $avatar ?>" class="avatar-header" id="avatar-header">
                                 </div>
                                 <h3 id="account" class="fl-right"><?php if(!empty(user_login())) echo user_login() ?></h3>
                             </button>

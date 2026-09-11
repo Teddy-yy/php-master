@@ -42,4 +42,11 @@
         }
         return false;
     }   
+
+    function get_user_by_username($username){
+        if(!empty($username)){
+            return db_fetch_row("SELECT * FROM `tbl_users` WHERE `username` = '{$username}'");
+        }
+        return false;
+    }
 ?>

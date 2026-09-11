@@ -2,8 +2,9 @@
     get_header();
     global $data;
     $info_user = $data['info_user'];
+    $upload_dir = "public/upload/avatars/";
     if(empty($info_user['avatar'])){
-        $avatar = "public/upload/avatars/default-avatar.jpg";
+        $avatar = "default-avatar.jpg";
     } else {
         $avatar = $info_user['avatar'];
     }
@@ -23,7 +24,7 @@
                 <div class="section-detail">
                     <form id="form-avatar" class="form-avatar" method="post" enctype="multipart/form-data">
                         <label for="">Ảnh đại diện</label>
-                        <img id="avatar-preview" src="<?php echo $avatar ?>" alt="Avatar" class="avatar-preview">
+                        <img id="avatar-preview" src="<?php echo $upload_dir . $avatar ?>" alt="Avatar" class="avatar-preview">
                         <label class="avatar-upload" for="avatar-input" id="avatar-upload">
                             <img src="public/upload/icons/camera.svg" alt="" class="avatar-upload-icon">
                         </label>

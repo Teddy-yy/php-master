@@ -27,5 +27,24 @@ $(document).ready(function () {
     });
 
     // Tự động tải ảnh đại diện vừa upload
-    
+    $("#form-avatar").on("change", function(){
+        let file = document.getElementById('avatar-input').files[0];
+        let formData = new FormData();
+        formData.append("avatar", file);
+        
+        $.ajax({
+            url : '?mod=users&action=updateAvatar',
+            type : "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType : 'json',
+
+            success: function(response) {
+                console.log(response.upload_file);
+                $("#avatar-preview").attr("src", response.upload_file);
+                $("#avatar-header").attr("src", response.upload_file);
+            }
+        })
+    })
 });
