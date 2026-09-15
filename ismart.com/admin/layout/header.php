@@ -15,11 +15,16 @@
         <title>Quản lý ISMART</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
         <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Reset -->
         <link href="public/reset.css" rel="stylesheet" type="text/css"/>
+        <!-- Font -->
         <link href="public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Style -->
         <link href="public/style.css" rel="stylesheet" type="text/css"/>
+        <!-- Responsive -->
         <link href="public/responsive.css" rel="stylesheet" type="text/css"/>
 
         <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>

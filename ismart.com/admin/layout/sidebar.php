@@ -1,16 +1,24 @@
 <div id="sidebar" class="fl-left">
     <ul id="sidebar-menu">
         <li class="nav-item">
+            <a href="<?php echo base_url() ?>" title="" class="nav-link">
+                <span class="icon">
+                    <img src="public/icons/dashboard.svg" alt="">
+                </span>
+                <span class="title">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
                 <span class="fa fa-map icon"></span>
                 <span class="title">Trang</span>
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=pages&action=addPage") ?>" title="" class="nav-link">Thêm mới</a>
+                    <a href="<?php echo base_url("?mod=home&action=addPage") ?>" title="" class="nav-link">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=pages") ?>" title="" class="nav-link">Danh sách các trang</a>
+                    <a href="<?php echo base_url("?mod=home&action=listPage") ?>" title="" class="nav-link">Danh sách các trang</a>
                 </li>
             </ul>
         </li>

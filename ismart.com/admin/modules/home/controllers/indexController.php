@@ -8,7 +8,11 @@
         load_view('index');
     }
 
-    function addAction(){
-       
+    function addPageAction(){
+       load_view('addPage');
+    }
+
+    function listPageAction(){
+       load_view('listPage');
     }
 ?>

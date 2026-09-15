@@ -1,5 +1,5 @@
 /*LIST*/
-#header-wp{ background: #4fa327;}
+#header-wp{ background: #2C2C2C;}
 #main-menu li{ float: left;}
 #main-menu li a{
     display: block;
@@ -138,7 +138,7 @@
     text-align: center;
     color: #fff;
     font-size: 13px;
-    background: #4FA327;
+    background: #2C2C2C;
     padding: 10px 0px;
 }
 

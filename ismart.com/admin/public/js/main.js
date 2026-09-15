@@ -10,16 +10,31 @@ $(document).ready(function () {
     });
 
 // EVENT SIDEBAR MENU
-    $('#sidebar-menu .nav-item .nav-link .title').after('<span class="fa fa-angle-right arrow"></span>');
+    // Nếu nav-item có sub-menu thì hiện mũi tên
+    $('#sidebar-menu .nav-item').each(function () {
+        if ($(this).find('.sub-menu').length > 0) {
+            $(this).find('.nav-link .title').after('<span class="fa fa-angle-right arrow"></span>');
+        }
+    });
     var sidebar_menu = $('#sidebar-menu > .nav-item > .nav-link');
     sidebar_menu.on('click', function () {
-        if (!$(this).parent('li').hasClass('active')) {
+        if ($(this).parent('li').find('.sub-menu').length === 0) {
+            return true;
+        }
+        // Nếu thẻ cha li của nav-link chưa có class active 
+        if (!$(this).parent('li').hasClass('active')) { 
+            // Đóng tất cả sub-menu
             $('.sub-menu').slideUp();
+            // Mở submenu của cái đang click
             $(this).parent('li').find('.sub-menu').slideDown();
+            // Xóa active cũ
             $('#sidebar-menu > .nav-item').removeClass('active');
+            // Đánh dấu cái vừa click
             $(this).parent('li').addClass('active');
             return false;
-        } else {
+        } 
+        // Nếu thẻ cha li của nav-link đã có class active
+        else {
             $('.sub-menu').slideUp();
             $('#sidebar-menu > .nav-item').removeClass('active');
             return false;
