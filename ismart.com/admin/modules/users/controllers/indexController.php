@@ -14,16 +14,6 @@ function indexAction() {
     load_view('index', $data);
 }
 
-function addAction() {
-    
-}
-
-function editAction() {
-    $id = (int)$_GET['id'];
-    $item = get_user_by_id($id);
-    show_array($item);
-}
-
 function loginAction(){
     global $error, $username, $password;
     if(isset($_POST['btn_login'])){
@@ -44,7 +34,7 @@ function loginAction(){
         } else if(!is_password($_POST['password'])){
             $error['password'] = "Mật khẩu phải dài ít nhất 8 ký tự, bao gồm ít nhất: 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ký tự đặc biệt";
         } else {
-            $password = md5($_POST['password']);
+            $password = $_POST['password'];
         }
 
         // Kết luận

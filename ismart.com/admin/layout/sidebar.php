@@ -46,13 +46,13 @@
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=products&action=addProduct") ?>" title="" class="nav-link">Thêm mới</a>
+                    <a href="<?php echo base_url("?controller=product&action=addProduct") ?>" title="" class="nav-link">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=products&action=listProduct") ?>" title="" class="nav-link">Danh sách sản phẩm</a>
+                    <a href="<?php echo base_url("?controller=product&action=listProduct") ?>" title="" class="nav-link">Danh sách sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=products&action=listCatProduct") ?>" title="" class="nav-link">Danh mục sản phẩm</a>
+                    <a href="<?php echo base_url("?controller=product&action=listCatProduct") ?>" title="" class="nav-link">Danh mục sản phẩm</a>
                 </li>
             </ul>
         </li>
@@ -63,10 +63,10 @@
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=sales&action=listOrder") ?>" title="" class="nav-link">Danh sách đơn hàng</a>
+                    <a href="<?php echo base_url("?controller=order&action=listOrder") ?>" title="" class="nav-link">Danh sách đơn hàng</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?mod=sales&action=listCustomer") ?>" title="" class="nav-link">Danh sách khách hàng</a>
+                    <a href="<?php echo base_url("?controller=order&action=listCustomer") ?>" title="" class="nav-link">Danh sách khách hàng</a>
                 </li>
             </ul>
         </li>

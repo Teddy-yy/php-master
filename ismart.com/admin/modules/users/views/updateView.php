@@ -26,7 +26,7 @@
                         <label for="">Ảnh đại diện</label>
                         <img id="avatar-preview" src="<?php echo $upload_dir . $avatar ?>" alt="Avatar" class="avatar-preview">
                         <label class="avatar-upload" for="avatar-input" id="avatar-upload">
-                            <img src="public/upload/icons/camera.svg" alt="" class="avatar-upload-icon">
+                            <img src="public/icons/camera.svg" alt="" class="avatar-upload-icon">
                         </label>
                         <input class="avatar-input" type="file" id="avatar-input" name="avatar">
                     </form>

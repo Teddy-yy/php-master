@@ -19,7 +19,7 @@ function add_user($data){
 
 function check_login($username, $password){
     $password_md5 = md5($password);
-    $check_user = db_num_rows("SELECT * FROM `tbl_users` WHERE `username` = '$username' OR `password` = '$password_md5'");
+    $check_user = db_num_rows("SELECT * FROM `tbl_users` WHERE `username` = '{$username}' AND `password` = '{$password_md5}'");
     if($check_user > 0){
         return true;
     }

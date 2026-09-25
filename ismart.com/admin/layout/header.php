@@ -37,7 +37,9 @@
             <div id="container">
                 <div id="header-wp">
                     <div class="wp-inner clearfix">
-                        <a href="<?php echo base_url() ?>" title="" id="logo" class="fl-left">ADMIN</a>
+                        <a href="<?php echo base_url() ?>" title="" id="logo" class="fl-left">
+                            <img src="public/images/logo.png" alt="">
+                        </a>
                         <ul id="main-menu" class="fl-left">
                             <li>
                                 <a href="<?php echo base_url() ?>" title="">Trang</a>

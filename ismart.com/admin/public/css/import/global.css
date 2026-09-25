@@ -14,6 +14,10 @@ img{
 /*Reset Bootstrap*/
 ul li{ list-style: none!important;}
 a{ text-decoration: none!important;}
+a:hover, a:focus {
+    color: inherit !important;
+    outline: none !important;
+}
 .dropdown-menu{
     left: inherit;
     right: 10px;
@@ -37,4 +41,53 @@ a{ text-decoration: none!important;}
 #cke_desc{
     width: 800px;
     margin-bottom: 15px;
+}
+
+/* Button */
+.button {
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: #ffffff;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: 0.5rem;
+    color: #111827;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: 8px 15px;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+.button:hover {
+  background-color: #f9fafb;
+}
+
+.button:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+}
+
+.button:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.wp {
+    border: 1px solid rgb(228, 231, 236);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.show-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
 }

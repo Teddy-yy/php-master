@@ -1,15 +1,14 @@
 $(document).ready(function () {
-
     var height = $(window).height() - $('#footer-wp').outerHeight(true) - $('#header-wp').outerHeight(true);
     $('#content').css('min-height', height);
 
-//  CHECK ALL
+    //  CHECK ALL
     $('input[name="checkAll"]').click(function () {
         var status = $(this).prop('checked');
         $('.list-table-wp tbody tr td input[type="checkbox"]').prop("checked", status);
     });
 
-// EVENT SIDEBAR MENU
+    // EVENT SIDEBAR MENU
     // Nếu nav-item có sub-menu thì hiện mũi tên
     $('#sidebar-menu .nav-item').each(function () {
         if ($(this).find('.sub-menu').length > 0) {
@@ -62,4 +61,28 @@ $(document).ready(function () {
             }
         })
     })
+
+    // Thêm class active vào sidebar của danh sách danh mục sản phẩm
+    // $(".category-sidebar-item").on("click", function(){
+    //     $('.category-sidebar-item').removeClass('active');
+    //     $(this).addClass('active');
+    // })
+
+    $(".category-item-action").on("click", function(e){
+        e.stopPropagation();
+        if($(this).find(".category-item-dropdown").hasClass('show-dropdown')){
+            $(this).find(".category-item-dropdown").removeClass('show-dropdown');
+        } else {
+            $(".category-item-dropdown").removeClass('show-dropdown');
+            $(".category-sidebar-item").removeClass("active");
+            $(this).parent(".category-sidebar-item").addClass("active");
+            $(this).find(".category-item-dropdown").addClass("show-dropdown");
+        }
+    })
+
+    $(document).click(function(){
+        // let a = $('.category-item-action').find(".category-item-dropdown").hasClass('show-dropdown');
+        // console.log(a);
+        $('.category-item-dropdown').removeClass('show-dropdown');
+    });
 });

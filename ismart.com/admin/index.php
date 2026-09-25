@@ -1,11 +1,9 @@
 <?php
-
 /*
  * --------------------------------------------------------------------
  * app path
  * --------------------------------------------------------------------
  */
-
 $app_path = dirname(__FILE__); // Dòng này lấy đường dẫn đến thư mục chứa file hiện tại và gán vào biến $app_path
 define('APPPATH', $app_path); // Tạo ra một hằng số toàn cục có tên là APPPATH với giá trị vừa tìm được ở trên.
 /*

@@ -11,7 +11,10 @@
     font-weight: normal;
     color: #fff;
     font-size: 24px;
-    padding: 15px 70px;
+    padding: 8px 70px;
+}
+#logo img {
+    height: 30px;
 }
 #thumb-circle{
     display: block;
@@ -27,22 +30,23 @@
 
 /*MAIN CONTENT*/
 #sidebar{ width: 18%; padding: 10px;}
-#content{ width: 82%; border-left: 1px solid #ddd; padding: 20px;}
-#add-new{
-    display: inline-block;
-    color: #fff;
-    background: #4fa327;
-    padding: 4px 15px;
-    margin: 20px;
+#content{ width: 82%; border-left: 1px solid #ddd; padding: 20px; background: #f5f6f8;}
+#content-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
 }
-#add-new:hover{ background: #3a7d19;}
+#add-new{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
 #index{
     font-family: 'Roboto Medium';
     font-weight: normal;
     text-transform: uppercase;
     font-size: 18px;
-    padding: 24px 0px;
-
 }
 #list-cat li{ position: relative;}
 #list-cat li .icon{

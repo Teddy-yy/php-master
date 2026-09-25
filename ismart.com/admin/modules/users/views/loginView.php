@@ -13,7 +13,7 @@
         <form action="" method="post" class="form-login">
             <input type="text" name="username" id="" placeholder="Username" value="<?php echo set_value('username') ?>">
             <?php echo form_error('username') ?>
-            <input type="password" name="password" id="" placeholder="Password">
+            <input type="password" name="password" id="" placeholder="Password" value="<?php echo set_value('username') ?>">
             <?php echo form_error('password') ?>
             <!-- <input type="checkbox" name="remember_me" id="">Ghi nhớ đăng nhập -->
             <input type="submit" value="Login" name="btn_login">
