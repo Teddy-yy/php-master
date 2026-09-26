@@ -70,19 +70,19 @@ $(document).ready(function () {
 
     $(".category-item-action").on("click", function(e){
         e.stopPropagation();
-        if($(this).find(".category-item-dropdown").hasClass('show-dropdown')){
-            $(this).find(".category-item-dropdown").removeClass('show-dropdown');
+        if($(this).find(".category-item-dropdown").is(":visible")){
+            $(this).find(".category-item-dropdown").fadeOut(250);
         } else {
-            $(".category-item-dropdown").removeClass('show-dropdown');
+            $(".category-item-dropdown").hide();
             $(".category-sidebar-item").removeClass("active");
             $(this).parent(".category-sidebar-item").addClass("active");
-            $(this).find(".category-item-dropdown").addClass("show-dropdown");
+            $(this).find(".category-item-dropdown").fadeIn(250);
         }
     })
 
     $(document).click(function(){
         // let a = $('.category-item-action').find(".category-item-dropdown").hasClass('show-dropdown');
         // console.log(a);
-        $('.category-item-dropdown').removeClass('show-dropdown');
+        $('.category-item-dropdown').hide();
     });
 });
