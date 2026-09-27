@@ -16,8 +16,8 @@
    }
 
    function listCatProductAction(){
-      $data['list_cat'] = get_list_cat();
-      $data['list_cat_child'] = get_list_cat('1');
+      $data['list_cat_parent'] = get_list_cat_parent();
+      $data['list_cat_child'] = get_list_cat_child();
       load_view('listCatProduct', $data);
    }
 ?>

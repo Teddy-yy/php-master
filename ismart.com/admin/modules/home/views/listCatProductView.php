@@ -1,8 +1,9 @@
 <?php 
     get_header();
-    $list_cat = $list_cat ?? [];
+    $list_cat_parent = $list_cat_parent ?? [];    
     $list_cat_child = $list_cat_child ?? [];
     $cat_id = isset($_GET['cat_id']) ? (int)$_GET['cat_id'] : 1;
+    // show_array($list_cat_child);
 ?>
 <div id="main-content-wp" class="list-cat-page">
     <div class="wrap clearfix">
@@ -25,7 +26,7 @@
                         <p class="category-title">DANH MỤC</p>
                     </div>
                     <ul class="category-sidebar-list">
-                        <?php foreach($list_cat as $item){ ?>
+                        <?php foreach($list_cat_parent as $item){ ?>
                         <li class="item category-sidebar-item wp <?php if($item['cat_id'] == $cat_id) echo "active" ?>">
                             <a href="?controller=product&action=listCatProduct&cat_id=<?php echo $item['cat_id'] ?>" class="category-item-link">
                                 <div class="category-item-info">

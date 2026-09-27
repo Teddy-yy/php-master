@@ -137,16 +137,20 @@
 }
 
 .category-content-list {
-    margin-top: 15px;
-}
-
-.category-content-list {
     margin-top: 20px;
     width: 100%;
 }
 
 .category-content-list thead {
     font-family: 'Roboto Medium';
+}
+
+.category-content-list tr {
+    transition: background-color .2s;
+}
+
+.category-content-list tr:hover {
+    background-color: #fafafa;
 }
 
 .category-content-list tr {
