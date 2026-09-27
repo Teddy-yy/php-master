@@ -62,27 +62,24 @@ $(document).ready(function () {
         })
     })
 
-    // Thêm class active vào sidebar của danh sách danh mục sản phẩm
-    // $(".category-sidebar-item").on("click", function(){
-    //     $('.category-sidebar-item').removeClass('active');
-    //     $(this).addClass('active');
-    // })
 
-    $(".category-item-action").on("click", function(e){
+    $(".action").on("click", function(e){
         e.stopPropagation();
-        if($(this).find(".category-item-dropdown").is(":visible")){
-            $(this).find(".category-item-dropdown").fadeOut(250);
+        if($(this).find(".action-dropdown").is(":visible")){
+            $(this).find(".action-dropdown").fadeOut(250);
         } else {
-            $(".category-item-dropdown").hide();
-            $(".category-sidebar-item").removeClass("active");
-            $(this).parent(".category-sidebar-item").addClass("active");
-            $(this).find(".category-item-dropdown").fadeIn(250);
+            $(".action-dropdown").hide();
+            // $(".category-sidebar-item").removeClass("active");
+            $(this).parent(".category-sidebar-item").css("z-index", "999");
+            $(this).find(".action-dropdown").fadeIn(250);
         }
     })
 
+    $('.category-sidebar-item').hover(function() {
+        $(this).find('.action-dropdown').hide();
+    });
+
     $(document).click(function(){
-        // let a = $('.category-item-action').find(".category-item-dropdown").hasClass('show-dropdown');
-        // console.log(a);
-        $('.category-item-dropdown').hide();
+        $('.action-dropdown').hide();
     });
 });

@@ -26,18 +26,18 @@
                     </div>
                     <ul class="category-sidebar-list">
                         <?php foreach($list_cat as $item){ ?>
-                        <li class="category-sidebar-item wp <?php if($item['cat_id'] == $cat_id) echo "active" ?>">
+                        <li class="item category-sidebar-item wp <?php if($item['cat_id'] == $cat_id) echo "active" ?>">
                             <a href="?controller=product&action=listCatProduct&cat_id=<?php echo $item['cat_id'] ?>" class="category-item-link">
                                 <div class="category-item-info">
                                     <img src="<?php echo $item['image'] ?>" alt="">
                                     <span class="category-item-name"><?php echo $item['name'] ?></span>
                                 </div>
                             </a>
-                            <div class="category-item-action">
-                                <img src="public/icons/three-dots.svg" alt="">
-                                <div class="category-item-dropdown wp" id="category-item-dropdown">
-                                    <a href="" class="category-item-dropdown-link">Xem thêm</a>
-                                    <a href="" class="category-item-dropdown-link">Xoá</a>
+                            <div class="action category-sidebar-action">
+                                <img src="public/icons/three-dots.svg" alt="" class="action-icon">
+                                <div class="action-dropdown wp">
+                                    <a href="" class="action-link">Xem thêm</a>
+                                    <a href="" class="action-link">Xoá</a>
                                 </div>
                             </div>
                         </li>
@@ -62,7 +62,7 @@
                                 <td>Mã Danh mục</td>
                                 <td>Danh mục</td>
                                 <td>Số lượng</td>
-                                <td></td>
+                                <td>Hành động</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,10 +74,21 @@
                                 <tr>
                                     <td><?php echo $k ?></td>
                                     <td><?php echo $item['code'] ?></td>
-                                    <td><?php echo $item['name'] ?></td>
+                                    <td>
+                                        <div class="category-info-wp">
+                                            <img src="<?php echo $item['image'] ?>" alt="" class="category-img">
+                                            <span><?php echo $item['name'] ?></span>
+                                        </div>
+                                    </td>
                                     <td><?php echo $item['quantity'] ?></td>
                                     <td>
-                                        <a href=""></a>
+                                        <div class="action">
+                                            <img src="public/icons/three-dots-vertical.svg" alt="" class="action-icon">
+                                            <div class="action-dropdown wp">
+                                                <a href="" class="action-link">Xem thêm</a>
+                                                <a href="" class="action-link">Xoá</a>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php } ?>

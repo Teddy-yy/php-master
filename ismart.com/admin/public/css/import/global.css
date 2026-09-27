@@ -91,3 +91,32 @@ a:hover, a:focus {
     opacity: 1 !important;
     visibility: visible !important;
 }
+
+.action {
+    position: relative;
+    padding: 8px;
+    transition: all 0.25s ease-in-out; 
+    height: 100%;
+}
+
+.action-dropdown {
+    position: absolute;
+    right: -30px;
+    display: none;
+    padding: 8px;
+    min-width: 135px;
+    z-index: 9999;
+}
+
+.action-link {
+    display: block;
+    padding: 6px 10px;
+    color: #667085;
+    transition: all .2s ease;
+}
+
+.action-link:hover {
+    color: #667085;
+    background: #f2f4f7;
+    border-radius: 12px;
+}
