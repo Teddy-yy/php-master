@@ -1,9 +1,22 @@
 <?php 
     get_header();
-    $list_cat_parent = $list_cat_parent ?? [];    
-    $list_cat_child = $list_cat_child ?? [];
+    $list_cat = $list_cat ?? [];    
+    // $list_cat_parent = $list_cat_parent ?? [];    
+    // $list_cat_child = $list_cat_child ?? [];
     $cat_id = isset($_GET['cat_id']) ? (int)$_GET['cat_id'] : 1;
-    // show_array($list_cat_parent[$cat_id]);
+    $cat_stt = $cat_id - 1;
+    $list_cat_parent = array();    
+    $list_cat_child = array();
+
+    foreach($list_cat as $cat){
+        if($cat['parent_id'] == '0'){
+            $list_cat_parent[] = $cat;
+        } else if($cat['parent_id'] == $cat_id){
+            $list_cat_child[] = $cat;
+        }
+    }
+
+    // show_array($list_cat_child);
 ?>
 <div id="main-content-wp" class="list-cat-page">
     <div class="wrap clearfix">
@@ -49,7 +62,7 @@
                     <div class="category-header">
                         <div class="category-header-left">
                             <img src="public/upload/category/phone.svg" alt="">
-                            <p class="category-title"><?php echo $list_cat_parent[$cat_id]['name'] ?></p>
+                            <p class="category-title"><?php echo $list_cat[$cat_stt]['name'] ?></p>
                         </div>
                     </div>
                     <?php if(!empty($list_cat_child)) { ?>

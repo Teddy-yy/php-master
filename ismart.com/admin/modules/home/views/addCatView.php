@@ -16,11 +16,13 @@
             <div class="add-cat wp">
                 <h4 class="add-cat-title">Thông tin danh mục sản phẩm</h4>
                 <form action="" method="post" class="form-add-cat" enctype="multipart/form-data">
+                    <!-- Tên danh mục -->
                     <div class="form-input-wp">
                         <label for="cat-name">Tên danh mục</label>
                         <input type="text" name="cat-name" id="cat-name" placeholder="Nhập tên danh mục" value="<?php echo set_value('cat_name')?>">
                         <?php echo form_error('cat-name') ?>
                     </div>
+                    <!-- Danh mục cha -->
                     <div class="form-input-wp">
                         <label for="cat-parent">Danh mục cha</label>
                         <div class="select-wrapper">
@@ -33,6 +35,13 @@
                             <img src="public/icons/chevron-down.svg" alt="" class="select-arrow">
                         </div>
                     </div>
+                    <!-- Mã danh mục -->
+                    <div class="form-input-wp">
+                        <label for="cat-code">Mã danh mục</label>
+                        <input type="text" name="cat-code" id="cat-code" placeholder="Nhập mã danh mục" value="<?php echo set_value('cat_code')?>">
+                        <?php echo form_error('cat-code') ?>
+                    </div>
+                    <!-- Ảnh danh mục -->
                     <div class="form-input-wp">
                         <label for="">Ảnh danh mục</label>
                         <div class="form-upload-img" id="form-upload-img">
