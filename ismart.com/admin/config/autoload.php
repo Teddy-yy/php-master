@@ -30,7 +30,7 @@ $autoload['lib'] = array('database');
  * $autoload['helper'] = array('data','string');
  */
 
-$autoload['helper'] = array('data','url','users');
+$autoload['helper'] = array('data','url','users', 'slug');
 
 
 

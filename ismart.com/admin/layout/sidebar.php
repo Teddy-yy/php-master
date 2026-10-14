@@ -45,14 +45,14 @@
                 <span class="title">Sản phẩm</span>
             </a>
             <ul class="sub-menu">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="<?php echo base_url("?controller=product&action=addProduct") ?>" title="" class="nav-link">Thêm mới</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="<?php echo base_url("?controller=product&action=listProduct") ?>" title="" class="nav-link">Danh sách sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo base_url("?controller=product&action=listCatProduct") ?>" title="" class="nav-link">Danh mục sản phẩm</a>
+                    <a href="<?php echo base_url("?controller=product&action=listCat") ?>" title="" class="nav-link">Danh mục sản phẩm</a>
                 </li>
             </ul>
         </li>

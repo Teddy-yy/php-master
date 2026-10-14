@@ -11,7 +11,6 @@ function get_user_by_id($id) {
     return $item;
 }
 
-
 // Thêm tài khoản
 function add_user($data){
     return db_insert('tbl_users',$data);
@@ -81,19 +80,19 @@ function update_pass($data, $reset_token){
     db_update('tbl_users', $data, "`reset_token` = '{$reset_token}'");
 }
 
-function get_user_by_username($username){
-    $info_user = db_fetch_row("SELECT * FROM `tbl_users` WHERE `username` = '$username'");
-    if(!empty($info_user)){
-        return $info_user;
-    }
-    return false;
-}
+// function get_user_by_username($username){
+//     // $info_user = db_fetch_row("SELECT * FROM `tbl_users` WHERE `username` = '$username'");
+//     // if(!empty($info_user)){
+//     //     return $info_user;
+//     // }
+//     // return false;
+// }
 
 function update_user_login($username ,$data){
     db_update('tbl_users', $data, "`username` = '$username'");
 }
 
-// Reset pass
+// // Reset pass
 function check_pass($username, $password){
     $check = db_num_rows("SELECT * FROM `tbl_users` WHERE `username` = '$username' AND `password` = '$password'");
     if($check > 0){
@@ -101,3 +100,5 @@ function check_pass($username, $password){
     } 
     return false;
 }
+
+?>

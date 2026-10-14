@@ -147,7 +147,7 @@
 }
 
 /*Action*/
-.filter-wp{ margin-bottom: 5px;}
+.filter-wp{ margin-bottom: 20px;}
 .actions{ margin-bottom: 20px;}
 .post-status li{ float: left; font-size: 14px; margin-right: 5px;}
 .post-status li .count{ color: #555d66; font-size: 13px; display: inline-block;}

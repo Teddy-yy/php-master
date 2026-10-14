@@ -62,7 +62,7 @@ $(document).ready(function () {
         })
     })
 
-
+    // Hiện dropdown action cho item trong table
     $(".action").on("click", function(e){
         e.stopPropagation();
         if($(this).find(".action-dropdown").is(":visible")){
@@ -75,11 +75,54 @@ $(document).ready(function () {
         }
     })
 
+    // 
     $('.category-sidebar-item').hover(function() {
         $(this).find('.action-dropdown').hide();
     });
 
+    // 
     $(document).click(function(){
         $('.action-dropdown').hide();
     });
+
+    // Xoá hình ảnh upload ở form
+    $("#form-delete-img").on("click", function(){
+        $("#form-upload-img").fadeOut();
+    });
+
+    // 
+    $("#cat-input-img").change(function(){
+        let file = this.files[0];
+
+        if (file) {
+            let imageUrl = URL.createObjectURL(file);
+            $('#form-img').attr('src', imageUrl);
+            $('#form-upload-img').fadeIn() ;
+        }
+
+        let formData = new FormData();
+
+        formData.append('category_image', file);
+
+        $.ajax({
+            'url' : "http://localhost/unitop.vn/backend/php/project/ismart.com/admin?controller=product&action=uploadImage",
+            'method' : "POST",
+            'data' : formData,
+            processData: false,
+            contentType: false,
+
+            success: function(response) {
+                console.log(response);
+                // $('#image-preview').attr('src', response);
+            },
+
+            error: function(xhr, status, error) {
+                console.log("Status:", xhr.status);
+                console.log("Response:", xhr.responseText);
+                console.log("Error:", error);
+
+                alert("Lỗi " + xhr.status);
+            }
+        })
+    })
 });

@@ -1,40 +1,52 @@
-<?php get_header() ?>
+<?php 
+    get_header();
+?>
 <div id="main-content-wp" class="list-product-page">
     <div class="wrap clearfix">
         <?php get_sidebar() ?>
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix">
-                    <h3 id="index" class="fl-left">Danh sách sản phẩm</h3>
-                    <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>
+                    <div id="content-header">
+                        <h3 id="index" class="fl-left">Danh sách sản phẩm</h3>
+                        <a href="<?php echo base_url("?controller=product&action=addProduct") ?>" title="" id="add-new" class="fl-left button">
+                            <img src="public/icons/plus.svg" alt="">
+                            Thêm sản phẩm
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
-                        <ul class="post-status fl-left">
-                            <li class="all"><a href="">Tất cả <span class="count">(69)</span></a> |</li>
-                            <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
-                            <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li>
-                            <li class="pending"><a href="">Thùng rác<span class="count">(0)</span></a></li>
-                        </ul>
-                        <form method="GET" class="form-s fl-right">
-                            <input type="text" name="s" id="s">
-                            <input type="submit" name="sm_s" value="Tìm kiếm">
+                        <form method="POST" class="filter-form">
+                            <div class="filter-search">
+                                <img src="public/icons/search.svg" alt="" class="filter-icon">
+                                <input
+                                    type="text"
+                                    class="filter-input"
+                                    placeholder="Tìm kiếm tên sản phẩm, mã sản phẩm..."
+                                >
+                            </div>
+
+                            <div class="filter-search-wp">
+                                <select class="filter-select">
+                                    <option value="">Tất cả danh mục</option>
+                                </select>
+                                <img src="public/icons/chevron-down.svg" alt="" class="filter-icon">
+                            </div>
+
+                            <div class="filter-search-wp">
+                                <select class="filter-select">
+                                    <option value="">Tất cả trạng thái</option>
+                                </select>
+                                <img src="public/icons/chevron-down.svg" alt="" class="filter-icon">
+                            </div>
+
+                            <button type="submit" class="button filter-button">Tìm kiếm</button>
                         </form>
                     </div>
-                    <div class="actions">
-                        <form method="GET" action="" class="form-actions">
-                            <select name="actions">
-                                <option value="0">Tác vụ</option>
-                                <option value="1">Công khai</option>
-                                <option value="1">Chờ duyệt</option>
-                                <option value="2">Bỏ vào thủng rác</option>
-                            </select>
-                            <input type="submit" name="sm_action" value="Áp dụng">
-                        </form>
-                    </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive wp">
                         <table class="table list-table-wp">
                             <thead>
                                 <tr>
@@ -46,7 +58,6 @@
                                     <td><span class="thead-text">Giá</span></td>
                                     <td><span class="thead-text">Danh mục</span></td>
                                     <td><span class="thead-text">Trạng thái</span></td>
-                                    <td><span class="thead-text">Người tạo</span></td>
                                     <td><span class="thead-text">Thời gian</span></td>
                                 </tr>
                             </thead>
@@ -64,87 +75,10 @@
                                         <div class="tb-title fl-left">
                                             <a href="" title="">Quần Âu nam vải trơn</a>
                                         </div>
-                                        <ul class="list-operation fl-right">
-                                            <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                            <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                        </ul>
                                     </td>
                                     <td><span class="tbody-text">250.000đ</span></td>
                                     <td><span class="tbody-text">Thời trang nam</span></td>
                                     <td><span class="tbody-text">Hoạt động</span></td>
-                                    <td><span class="tbody-text">Admin</span></td>
-                                    <td><span class="tbody-text">12-07-2016</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                                    <td><span class="tbody-text">1</h3></span>
-                                    <td><span class="tbody-text">WEB00001</h3></span>
-                                    <td>
-                                        <div class="tbody-thumb">
-                                            <img src="public/images/img-product.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td class="clearfix">
-                                        <div class="tb-title fl-left">
-                                            <a href="" title="">Quần Âu nam vải trơn</a>
-                                        </div>
-                                        <ul class="list-operation fl-right">
-                                            <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                            <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </td>
-                                    <td><span class="tbody-text">250.000đ</span></td>
-                                    <td><span class="tbody-text">Thời trang nam</span></td>
-                                    <td><span class="tbody-text">Hoạt động</span></td>
-                                    <td><span class="tbody-text">Admin</span></td>
-                                    <td><span class="tbody-text">12-07-2016</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                                    <td><span class="tbody-text">1</h3></span>
-                                    <td><span class="tbody-text">WEB00001</h3></span>
-                                    <td>
-                                        <div class="tbody-thumb">
-                                            <img src="public/images/img-product.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td class="clearfix">
-                                        <div class="tb-title fl-left">
-                                            <a href="" title="">Quần Âu nam vải trơn</a>
-                                        </div>
-                                        <ul class="list-operation fl-right">
-                                            <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                            <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </td>
-                                    <td><span class="tbody-text">250.000đ</span></td>
-                                    <td><span class="tbody-text">Thời trang nam</span></td>
-                                    <td><span class="tbody-text">Hoạt động</span></td>
-                                    <td><span class="tbody-text">Admin</span></td>
-                                    <td><span class="tbody-text">12-07-2016</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name="checkItem" class="checkItem"></td>
-                                    <td><span class="tbody-text">1</h3></span>
-                                    <td><span class="tbody-text">WEB00001</h3></span>
-                                    <td>
-                                        <div class="tbody-thumb">
-                                            <img src="public/images/img-product.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td class="clearfix">
-                                        <div class="tb-title fl-left">
-                                            <a href="" title="">Quần Âu nam vải trơn</a>
-                                        </div>
-                                        <ul class="list-operation fl-right">
-                                            <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                            <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </td>
-                                    <td><span class="tbody-text">250.000đ</span></td>
-                                    <td><span class="tbody-text">Thời trang nam</span></td>
-                                    <td><span class="tbody-text">Hoạt động</span></td>
-                                    <td><span class="tbody-text">Admin</span></td>
                                     <td><span class="tbody-text">12-07-2016</span></td>
                                 </tr>
                             </tbody>

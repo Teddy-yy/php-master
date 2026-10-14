@@ -57,4 +57,52 @@
         global $$label_field;
         if(!empty($$label_field)) return $$label_field;
     }
+
+    // Kiểm tra ảnh tải lên
+    function check_update_img($image){
+        // 1. Kiểm tra người dùng đã chọn ảnh chưa 
+        if (!isset($image) || $image['error'] === UPLOAD_ERR_NO_FILE) { 
+            return "Vui lòng chọn ảnh"; 
+        } 
+
+        // 2. Kiểm tra lỗi tải ảnh 
+        if ($image['error'] !== UPLOAD_ERR_OK) { 
+            return "Có lỗi xảy ra khi tải ảnh lên"; 
+        } 
+
+        // 3. Kiểm tra định dạng ảnh 
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/svg']; 
+
+        $imageInfo = getimagesize($image['tmp_name']); 
+
+        if ($imageInfo === false) { 
+            return "File tải lên không phải là ảnh hợp lệ"; 
+        } 
+        
+        if (!in_array($imageInfo['mime'], $allowedTypes, true)) { 
+            return "Chỉ chấp nhận ảnh JPG, PNG, SVG hoặc WEBP"; 
+        } 
+        
+        // 4. Kiểm tra dung lượng (tối đa 2MB) 
+        if ($image['size'] > 2 * 1024 * 1024) { 
+            return "Dung lượng ảnh không được vượt quá 2MB"; 
+        } 
+        
+        return true;
+    }
+
+    // Hàm tạo tên đường dẫn ảnh mới và lưu vào thư mục upload
+    function uploadImage($upload_folder, $file){
+        $upload_dir = "public/upload/$upload_folder/";
+
+        $file_name = bin2hex(random_bytes(16)) . '.' . pathinfo($file['name'], PATHINFO_EXTENSION);
+
+        $upload_file = $upload_dir.$file_name;
+
+        if (move_uploaded_file($file['tmp_name'], $upload_file)) {
+            return $upload_file;
+        }
+
+        return "";
+    }
 ?>
