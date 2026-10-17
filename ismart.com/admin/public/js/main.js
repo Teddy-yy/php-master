@@ -120,9 +120,10 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function(response) {
+                // console.log(response);
                 let html = '<option value = "0">-- Chọn danh mục sản phẩm con --</option>';
                 response.forEach(function(cat) {
-                    html += `<option value="${cat.id}">${cat.name}</option>`;
+                    html += `<option value="${cat.cat_id}">${cat.name}</option>`;
                 });
                 $("#product-cat-child").html(html);
             },

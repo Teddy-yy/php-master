@@ -31,7 +31,9 @@
          }
 
          // Kiểm tra danh mục sản phẩm
-         if($_POST[''])
+         if($_POST['product-cat-parent'] == '0'){
+            
+         }
 
          // Kiểm tra mã sản phẩm
          if(!empty($_POST['cat-code'])){
@@ -72,9 +74,12 @@
    }
 
    function getChildCatAction(){
-      $list_cat_child = get_list_cat($_POST['parent_id']);
+      $result = array();
+      if($_POST['parent_id'] != '0'){
+         $result = get_list_cat($_POST['parent_id']);
+      } 
       
-      echo json_encode($list_cat_child);
+      echo json_encode($result);
    }
 
    function listProductAction(){

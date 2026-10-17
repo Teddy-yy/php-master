@@ -41,9 +41,6 @@
                             <div class="select-wrapper">
                                 <select name="product-cat-child" id="product-cat-child">
                                     <option value="0">-- Chọn danh mục sản phẩm con --</option>
-                                    <?php foreach($list_cat_parent as $item){ ?>
-                                        <option value="<?php echo $item['cat_id'] ?>"><?php echo $item['name'] ?></option>
-                                    <?php } ?>
                                 </select>
                                 <img src="public/icons/chevron-down.svg" alt="" class="select-arrow">
                             </div>
