@@ -90,39 +90,45 @@ $(document).ready(function () {
         $("#form-upload-img").fadeOut();
     });
 
-    // 
-    $("#cat-input-img").change(function(){
+    // Hiển thị ảnh sau khi chọn từ máy tính
+    $("#input-img").change(function(){
         let file = this.files[0];
 
         if (file) {
             let imageUrl = URL.createObjectURL(file);
             $('#form-img').attr('src', imageUrl);
-            $('#form-upload-img').fadeIn() ;
+            setTimeout(function(){
+                $('#form-upload-img').addClass('form-upload-img-show');
+            }, 200);
         }
 
         let formData = new FormData();
 
         formData.append('category_image', file);
 
+    })
+
+    // Khi chọn danh mục cha thì hiển thị danh mục con tương ứng
+    $("#product-cat-parent").change(function(){
+        let parent_id = $(this).val();
+    
         $.ajax({
-            'url' : "http://localhost/unitop.vn/backend/php/project/ismart.com/admin?controller=product&action=uploadImage",
-            'method' : "POST",
-            'data' : formData,
-            processData: false,
-            contentType: false,
-
-            success: function(response) {
-                console.log(response);
-                // $('#image-preview').attr('src', response);
+            url: "?controller=product&action=getChildCat",
+            type: "POST",
+            data: {
+                parent_id: parent_id
             },
-
+            dataType: 'json',
+            success: function(response) {
+                let html = '<option value = "0">-- Chọn danh mục sản phẩm con --</option>';
+                response.forEach(function(cat) {
+                    html += `<option value="${cat.id}">${cat.name}</option>`;
+                });
+                $("#product-cat-child").html(html);
+            },
             error: function(xhr, status, error) {
-                console.log("Status:", xhr.status);
-                console.log("Response:", xhr.responseText);
-                console.log("Error:", error);
-
-                alert("Lỗi " + xhr.status);
+                console.log(xhr.responseText);
             }
         })
-    })
+    });
 });

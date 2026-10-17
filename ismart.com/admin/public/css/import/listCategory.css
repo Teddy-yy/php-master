@@ -111,6 +111,11 @@
 .category-header-left {
     display: flex;
     align-items: center;
+    gap: 8px;
+}
+
+.category-header-left img {
+    width: 18px;
 }
 
 .category-content-btn {

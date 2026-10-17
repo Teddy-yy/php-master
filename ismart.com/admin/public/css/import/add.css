@@ -1,0 +1,25 @@
+/* Add cat */
+.add-cat {
+    padding: 30px;
+}
+
+.add-cat-title {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.form-add-cat {
+    margin-top: 20px;
+}
+
+/* Add product */
+.form-add-product {
+    margin-top: 20px;
+}
+
+.form-add-product .form-input-wp {
+    flex: 1;
+    max-width: initial;
+}
+
+

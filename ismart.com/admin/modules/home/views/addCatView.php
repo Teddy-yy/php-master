@@ -48,14 +48,14 @@
                             <img src="" alt="" id="form-img">
                             <img src="public/icons/xmark.svg" alt="" class="form-delete-img" id="form-delete-img">
                         </div>
-                        <label for="cat-input-img" class="form-upload-label">
-                            <input type="file" name="cat-input-img" id="cat-input-img" hidden>
+                        <label for="input-img" class="form-upload-label">
+                            <input type="file" name="input-img" id="input-img" hidden>
                             <div class="form-upload-wp">
                                 <img src="public/icons/upload.svg" alt="">
                             </div>
                             <p>Tải ảnh lên</p>
                         </label>
-                        <?php echo form_error('cat-input-img') ?>
+                        <?php echo form_error('input-img') ?>
                     </div>
                     <input type="submit" value="Thêm danh mục" name="btn-add-cat">
                 </form>

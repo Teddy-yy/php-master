@@ -39,7 +39,7 @@ a:hover, a:focus {
 
 /*CK Editor*/
 #cke_desc{
-    width: 800px;
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -133,6 +133,11 @@ select {
 }
 
 /* Form */
+.form-row {
+    display: flex;
+    gap: 30px;
+}
+
 .form-input-wp {
     display: flex;
     flex-direction: column;
@@ -145,17 +150,19 @@ select {
     margin-bottom: 5px;
 }
 
-.form-input-wp input,  .form-input-wp .select-wrapper {
+.form-input-wp input,  .form-input-wp .select-wrapper, .form-input-wp textarea {
     border: 1px solid rgb(208, 213, 221);
     border-radius: 8px;
     padding: 10px;
 }
 
+.form-input-wp textarea {
+    resize: none;
+    height: 100px;
+}
+
 .select-wrapper {
     position: relative;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     width: 100%;
 }
 
@@ -198,6 +205,12 @@ select {
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.form-upload-img.form-upload-img-show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-delete-img {
