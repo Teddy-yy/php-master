@@ -35,6 +35,7 @@
                                 </select>
                                 <img src="public/icons/chevron-down.svg" alt="" class="select-arrow">
                             </div>
+                            <?php echo form_error('product-cat-parent') ?>
                         </div>
                         <div class="form-input-wp">
                             <label for="product-cat-child">Danh mục sản phẩm con</label>
@@ -44,30 +45,35 @@
                                 </select>
                                 <img src="public/icons/chevron-down.svg" alt="" class="select-arrow">
                             </div>
+                            <?php echo form_error('product-cat-child') ?>
                         </div>
                     </div>
                     <div class="form-row">
-                        <!-- Mã sản phẩm -->
-                        <div class="form-input-wp">
-                            <label for="product-code">Mã sản phẩm</label>
-                            <input type="text" name="product-code" id="product-code" placeholder="Nhập mã sản phẩm" value="<?php echo set_value('product_code')?>">
-                            <?php echo form_error('product-code') ?>
-                        </div>
                         <!-- Giá sản phẩm -->
                         <div class="form-input-wp">
                             <label for="product-price">Giá sản phẩm</label>
                             <input type="number" name="product-price" id="product-price" placeholder="Nhập giá sản phẩm" value="<?php echo set_value('product_price')?>">
                             <?php echo form_error('product-price') ?>
                         </div>
+                        <!-- Số lượng sản phẩm -->
+                        <div class="form-input-wp">
+                            <label for="product-quantity">Số lượng sản phẩm</label>
+                            <input type="number" name="product-quantity" placeholder="Nhập số lượng sản phẩm" value="<?php echo set_value('product_quantity')?>">
+                            <?php echo form_error('product-quantity') ?>
+                        </div>
                     </div>
                     <!-- Mô tả sản phẩm -->
                     <div class="form-input-wp">
                         <label for="product-desc">Mô tả sản phẩm</label>
-                        <textarea name="product-desc" id=""></textarea>
+                        <textarea name="product-desc" id=""><?php echo set_value('product_desc')?></textarea>
                         <?php echo form_error('product-desc') ?>
                     </div>
                     <!-- Chi tiết sản phẩm -->
-                    <textarea name="product-detail" id="desc" class="ckeditor"></textarea>
+                    <div class="form-input-wp">
+                        <label for="product-detail">Chi tiết sản phẩm</label>
+                        <div id="editor"></div>
+                        <input type="hidden" name="product-detail" id="product_detail">
+                    </div>
                     <!-- Ảnh sản phẩm -->
                     <div class="form-input-wp">
                         <label for="">Ảnh sản phẩm</label>

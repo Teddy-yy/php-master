@@ -26,11 +26,16 @@
         <link href="public/style.css" rel="stylesheet" type="text/css"/>
         <!-- Responsive -->
         <link href="public/responsive.css" rel="stylesheet" type="text/css"/>
+        <!-- CK Editor -->
+         <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/49.0.0/ckeditor5.css" />
 
         <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
         <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
         <script src="public/js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
         <script src="public/js/main.js" type="text/javascript"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/49.0.0/ckeditor5.umd.js"></script>
+        <script src="public/js/ckeditor.js" defer type="text/javascript"></script>
+
     </head>
     <body>
         <div id="site">

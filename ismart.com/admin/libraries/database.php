@@ -7,8 +7,8 @@ function db_connect() {
     $conn = mysqli_connect($db['hostname'], $db['username'], $db['password'], $db['database']);
     if (!$conn) {
         die("Kết nối không thành công ".mysqli_connect_error());
-    }
-//    mysqli_set_charset($conn, "utf8");
+    } 
+    mysqli_set_charset($conn, "utf8");
     
 }
 
@@ -61,10 +61,8 @@ function db_insert($table, $data) {
             $values .= "'" . escape_string($value) . "', ";
     }
     $values = substr($values, 0, -2);
-    db_query("
-            INSERT INTO $table $fields
-            VALUES($values)
-        ");
+    db_query("INSERT INTO $table $fields VALUES($values)");
+
     return mysqli_insert_id($conn);
 }
 
